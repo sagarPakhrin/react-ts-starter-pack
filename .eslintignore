@@ -1,0 +1,10 @@
+
+build
+node_modules
+.github
+src/reportWebVitals.js
+webpack
+tailwind.config.js
+postcss.config.js
+.env
+.eslintrc.js

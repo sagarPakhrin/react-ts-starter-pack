@@ -1,6 +1,7 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DotenvWebpackPlugin = require('dotenv-webpack');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const DotenvWebpackPlugin = require('dotenv-webpack')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
@@ -64,5 +65,14 @@ module.exports = {
     new DotenvWebpackPlugin({
       silent: true,
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '..', 'src/assets'),
+          to: path.resolve(__dirname, '..', 'build/assets'),
+          noErrorOnMissing: true,
+        },
+      ],
+    }),
   ],
-};
+}
