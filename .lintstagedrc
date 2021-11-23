@@ -3,7 +3,8 @@
     "eslint"
   ],
   "*.{html,js,json,jsx,ts,tsx}": [
-    "prettier --write",
+    "prettier",
+    "jest --findRelatedTests",
     "git add"
   ]
 }

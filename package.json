@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
-    "lint": "eslint --fix --ignore-path .eslintignore --ext .js,.ts,.tsx .",
+    "lint": "jest --config jest.lint.js",
     "prettier": "prettier --ignore-path .eslintignore '**/*.{js,jsx,ts,tsx}'",
     "check-format": "npm run prettier -- --list-different",
     "format": "npm run prettier -- --write",
@@ -15,6 +15,11 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch"
+  },
+  "jest-runner-eslint": {
+    "cliOptions": {
+      "ignorePath": "./.eslintignore"
+    }
   },
   "keywords": [],
   "author": "",
@@ -56,6 +61,7 @@
     "identity-obj-proxy": "^3.0.0",
     "is-ci-cli": "^2.2.0",
     "jest": "^27.3.1",
+    "jest-runner-eslint": "^1.0.0",
     "lint-staged": "^12.1.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.4.1",
