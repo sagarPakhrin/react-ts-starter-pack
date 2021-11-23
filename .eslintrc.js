@@ -28,5 +28,14 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      node: {
+        paths: ['src', 'test'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+      jest: {
+        jestConfigFile: './jest.config.js',
+      },
+    },
   },
 }
