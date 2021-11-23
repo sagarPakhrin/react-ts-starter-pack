@@ -11,4 +11,5 @@ module.exports = {
     '\\.css$': require.resolve('./__mocks__/styleMock.ts'),
   },
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  collectCoverageFrom: ['**/src/**/*.ts', '**/src/**/*.tsx'],
 }
