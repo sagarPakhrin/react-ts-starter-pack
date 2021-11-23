@@ -1,0 +1,8 @@
+# Deps
+node_modules
+
+#build files
+build
+
+#Env file
+.env
